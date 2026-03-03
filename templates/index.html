@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CIFAR-10 / CMD</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ccc;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .container {
+            border: 1px solid #333;
+            padding: 30px;
+            width: 400px;
+            background: #0a0a0a;
+        }
+        h1 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .status-text {
+            font-size: 0.8rem;
+            color: #ff6b00; /* Safety Orange */
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input[type="file"] {
+            font-family: inherit;
+            color: #888;
+            font-size: 0.8rem;
+        }
+        button {
+            background: none;
+            border: 1px solid #ff6b00;
+            color: #ff6b00;
+            padding: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: background 0.1s;
+        }
+        button:hover {
+            background: #ff6b00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>System.CIFAR_10.Classifier</h1>
+        <div class="status-text">> awaiting_input...</div>
+        
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required />
+            <button type="submit">[ Run Inference ]</button>
+        </form>
+    </div>
+</body>
+</html>
